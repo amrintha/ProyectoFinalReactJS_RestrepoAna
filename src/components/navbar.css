@@ -1,0 +1,24 @@
+.navbar{
+    background-color: rgb(8, 37, 55);
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar .logo{
+    width: 120px;
+    height: 120px; 
+}
+
+.categorias{
+    display: flex;
+    color: rgb(169, 111, 169);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.2rem;
+    list-style-type: none;
+}
+
+.categorias li{
+    margin-right: 80px;
+}
