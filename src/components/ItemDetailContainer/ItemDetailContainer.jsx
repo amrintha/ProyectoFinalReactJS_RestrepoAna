@@ -2,7 +2,7 @@ import useProduct from '../../hooks/useProduct.js';
 import Loading from '../Loading/Loading';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
-import './ItemDetailContainer.css';
+import './itemDetailContainer.css';
 
 const ItemDetailContainer = () => {
   const { productId } = useParams();
