@@ -9,9 +9,9 @@ const Item = ({ product }) => {
             </div>
             <div className="text-item">
                 <p className="title-item">{product.name}</p>
-                <p className="price-item">${product.price}</p>
-                <Link to={`/detail/${product.id}`}>
-                    <p className="button-item">Más Info</p>
+                <p className="price-item">Precio: ${product.price}</p>
+                <Link to={`/detail/${product.id}`} > 
+                    <p className="button-item">MÁS INFO</p>
                 </Link>
             </div>
         </li>

@@ -1,21 +1,35 @@
 import { useEffect, useState } from "react"
-import { getProductById } from "../data/products";
+import { doc, getDoc } from "firebase/firestore";
+import db from "../db/db.js";
 
-const useProduct =() =>{
+const useProduct = (productId) => {
     const [product, setProduct] = useState({});
-    const [loading, setLoading]= useState(true);
+    const [loading, setLoading] = useState(true);
 
-    useEffect(()=>{
-        getProductById(productId)
-        .then((data)=>{
-            setProduct(data);
-        })
-        .finally(()=>{
+    const getProduct = async () => {
+        try {
+            const docRef = doc(db, "products", productId)
+            const dataDb = await getDoc(docRef);
+
+            if (dataDb.exists()) {
+                const data = { id: dataDb.id, ...dataDb.data() };
+                setProduct(data);
+            } else {
+                setProduct(null);
+            }
+
+        } catch (error) {
+            setProduct(null);
+        } finally {
             setLoading(false);
-        })
+
+        }
+    }
+    useEffect(() => {
+        getProduct();
     }, [])
 
-    return {product, loading}
-}
+    return { product, loading }
+};
 
 export default useProduct;

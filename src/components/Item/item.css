@@ -1,7 +1,8 @@
+*{}
 .item{
   border-radius: 2px;
-  width: 350px;
-  height: 500px;
+  width: 300px;
+  height: 400px;
   list-style: none;
   margin: 20px 40px;
   font-size: 20px;
@@ -12,28 +13,42 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  border-radius: 5px;
   background: radial-gradient(
     circle,
     rgb(169, 111, 169) 20%,
     rgba(255, 255, 255, 0) 100%
   );
 }
+
+.img-item-container .img-item{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 .img-item{
   width: 80%;
 }
 .text-item{
-  height: 40%;
+  height: 35%;
   background-color: rgb(8, 37, 55);
   padding: 20px 15px;
   color: white;
+  border-radius: 5px;
 }
 .title-item{
-  margin: 0 0 40px 0;
+  margin: 0 0 20px 0;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
 }
 .price-item{
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 500;
 }
+
 .button-item{
   margin: 20px 0;
   font-size: 15px;
