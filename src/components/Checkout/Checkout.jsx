@@ -13,7 +13,7 @@ const Checkout = () => {
     })
 
     const [orderId, setOrderId] = useState(null);
-    const { cart, totalPrice } = useContext(CartContext);
+    const { cart, totalPrice, deleteCart } = useContext(CartContext);
 
     const handleChangeInput = (event) => {
         setDataForm({ ...dataForm, [event.target.name]: event.target.value });
@@ -37,6 +37,7 @@ const Checkout = () => {
             const response = await addDoc(orderRef, order);
 
             setOrderId(response.id);
+            deleteCart();
         } catch (error) {
             console.log("Error")
         }
